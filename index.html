@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For U, Lynn</title>
+
+<style>
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background: linear-gradient(#0f172a, #020617);
+  color: #f8fafc;
+  overflow: hidden;
+}
+.slide {
+  width: 100vw;
+  height: 100vh;
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 24px;
+}
+.slide.active { display: flex; }
+.tap {
+  position: absolute;
+  bottom: 24px;
+  font-size: 0.9em;
+  opacity: 0.6;
+}
+</style>
+</head>
+
+<body>
+
+<audio autoplay loop>
+  <source src="wanna-be-yours-instrumental.mp3" type="audio/mpeg">
+</audio>
+
+<div class="slide active">
+  <h1>For U, Lynn 😉</h1>
+  <div class="tap">tap anywhere</div>
+</div>
+
+<div class="slide">
+  <p>i believe in u, and i know u can handle anything.</p>
+  <p>u r braver than u believe, stronger than u seem.</p>
+  <p>im so proud of u, always.</p>
+  <p>im here for u 🤍</p>
+  <div class="tap">tap anywhere</div>
+</div>
+
+<div class="slide">
+  <div style="display:flex; flex-direction:column; gap:14px; align-items:center;">
+    <img src="photo1.jpg" style="width:80%; border-radius:16px;">
+    <img src="photo2.jpg" style="width:80%; border-radius:16px;">
+    <img src="photo3.jpg" style="width:80%; border-radius:16px;">
+  </div>
+  <div class="tap">tap anywhere</div>
+</div>
+
+<script>
+let slides = document.querySelectorAll('.slide');
+let index = 0;
+document.body.addEventListener('click', () => {
+  slides[index].classList.remove('active');
+  index = (index + 1) % slides.length;
+  slides[index].classList.add('active');
+});
+</script>
+
+</body>
+</html>
